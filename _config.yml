@@ -47,11 +47,11 @@ owner:
   name:           Wangxin
   avatar:         logo.png
   bio:            "Your bio goes here. It shouldn't be super long but a good sentence or two should suffice."
-  email:          you@email.com
+  email:          flybird1987@email.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
   facebook:       
-  github:         
+  github:         https://github.com/einsteinliu
   stackexchange:  
   linkedin:       
   instagram:      
@@ -70,7 +70,7 @@ google_verify:
 bing_verify:         
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Europe/Berlin
 future:      true
 highlighter: rouge
 markdown:    kramdown
