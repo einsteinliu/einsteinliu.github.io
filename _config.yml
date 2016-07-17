@@ -13,24 +13,33 @@ url:
 #   To create sub categories. add a submenu item
 # See the example
 menu:
-  - title: 'Home'
+  - title: '首页'
     url: '/'
-  - title: 'Fork'
-    url: 'http://github.com/aron-bordin/neo-hpstr-jekyll-theme'
-  - title: 'Install'
-    url: '/theme-setup/'
+  - title: '机器学习'
+    url: '/machine-learning'
+    submenu:
+      - title: '计算机视觉'
+        url: '/computer-vision'
+      - title: '机器学习基础'
+        url: '/ml-basic'
+  - title: '技术基础'
+    url: '/programming'
+    submenu:
+      - title: 'C++'
+        url: '/cpp'
+      - title: '七七八八'
+        url: '/others'
+  - title: '艺术'
+    url: '/art'
+    submenu:
+      - title: '艺术史'
+        url: '/art-history'
+      - title: '艺术理论'
+        url: '/art-theory'
+      - title: '美学'
+        url: '/aesthetics'
   - title: 'Tags'
     url: '/tags'
-  - title: 'Categories'
-    url: '/categories'
-    type: 'categories'
-  - title: 'Favorites'
-    url: '#'
-    submenu:
-      - title: 'Code Highlighter'
-        url: '/intro/code-highlighting-post/'
-      - title: 'Sample Post'
-        url: '/intro/sample-post/'
 
 # Owner/author information
 owner:
