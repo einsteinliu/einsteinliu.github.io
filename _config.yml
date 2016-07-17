@@ -1,91 +1,41 @@
-title:            Wangxin's Blog
+title:            Site Title
 description:      Describe your website here.
-# put your disqus here
-disqus_shortname: einsteinliu
-reading_time:     true # if true, shows the estimated reading time for a post
+disqus_shortname: 
+reading_time:     true
 words_per_minute: 200
-logo:             images/logo.png # logo visible in the topbar
-# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
+# Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-
-url: http://127.0.0.1:4000
-
-# draw your top menu here
-# each item must have a title and a url.
-#   To list post categories. use type: 'categories'
-#   To create sub categories. add a submenu item
-# See the example
-menu:
-  - title: '首页'
-    url: '/'
-  - title: '机器学习'
-    url: '/machine-learning'
-    submenu:
-      - title: '计算机视觉'
-        url: '/computer-vision'
-      - title: '机器学习基础'
-        url: '/ml-basic'
-  - title: '技术基础'
-    url: '/programming'
-    submenu:
-      - title: 'C++'
-        url: '/cpp'
-      - title: '七七八八'
-        url: '/others'
-  - title: '艺术'
-    url: '/art'
-    submenu:
-      - title: '艺术史'
-        url: '/art-history'
-      - title: '艺术理论'
-        url: '/art-theory'
-      - title: '美学'
-        url: '/aesthetics'
-  - title: 'Tags'
-    url: '/tags'
-  # - title: 'Categories'
-  #   url: '/categories'
-  #   type: 'categories'
-  # - title: 'Favorites'
-  #   url: '#'
-  #   submenu:
-  #     - title: 'Code Highlighter'
-  #       url: '/intro/code-highlighting-post/'
-  #     - title: 'Sample Post'
-  #       url: '/intro/sample-post/'
+url:
 
 # Owner/author information
 owner:
-  name:           Wangxin Liu
-  site:           http://aronbordin.com
-  avatar:         images/avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          flybird1987@gmail.com
-  # Twitter nick for use in Twitter cards and follow button.
-  twitter: 
-  # GitHub nick for use in follow button in author block.
-  github:         einsteinliu
+  name:           Your Name
+  avatar:         avatar.jpg
+  bio:            "Your bio goes here. It shouldn't be super long but a good sentence or two should suffice."
+  email:          you@email.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        
+  facebook:       
+  github:         
+  stackexchange:  
+  linkedin:       
+  instagram:      
+  flickr:         
+  tumblr:         
+  # google plus id, include the '+', eg +mmistakes
+  google_plus:
 
-# Twitter account associated with the site if different from owner/author twitter account.
-# Used in Twitter cards.
-twitter: 
-
-# Social networking links used in author block underneath posts. Update and remove as you like.
-social:
-  - title: "github"
-    url: "https://github.com/einsteinliu"
 # Background image to be tiled on all pages
-background:
+background: 
 
 # Analytics and webmaster tools stuff goes here
-google_analytics: UA-80848870-1
-google_verify:
+google_analytics:   
+google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+bing_verify:         
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Europe/Berlin
-locale:      en_US
+timezone:    America/New_York
 future:      true
 highlighter: rouge
 markdown:    kramdown
@@ -104,32 +54,36 @@ permalink:   /:categories/:title/
 # Amount of post to show on home page
 paginate: 5
 
-# if true, shows the floatting share buttons
-float_share: false
-
 kramdown:
+  input: GFM
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
 
-  coderay:
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
-
-# Octopress
-# Default extensions
-post_ext: md
-page_ext: md
-# Found in _templates/
-post_layout: post
-page_layout: page
-# Format titles with titlecase?
-titlecase: true
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+include: 
+  - .htaccess
+exclude: 
+  - "*.less"
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - config
+  - gulpfile.js
+  - lib
+  - log
+  - node_modules
+  - package.json
+  - spec
+  - tmp
