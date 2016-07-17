@@ -1,7 +1,7 @@
-title:            Site Title
-description:      Describe your website here.
+title:            Wangxin's Blog
+description:      一些笔记和文章。。。
 disqus_shortname: 
-reading_time:     true
+reading_time:     false
 words_per_minute: 200
 logo:             images/logo.png
 # Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
@@ -44,8 +44,8 @@ menu:
 
 # Owner/author information
 owner:
-  name:           Your Name
-  avatar:         avatar.jpg
+  name:           Wangxin
+  avatar:         logo.png
   bio:            "Your bio goes here. It shouldn't be super long but a good sentence or two should suffice."
   email:          you@email.com
   # Social networking links used in footer. Update and remove as you like.
@@ -64,7 +64,7 @@ owner:
 background: 
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
+google_analytics:   UA-80848870-1
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
