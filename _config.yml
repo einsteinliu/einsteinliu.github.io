@@ -39,14 +39,14 @@ menu:
         url: '/art-theory'
       - title: '美学'
         url: '/aesthetics'
-  - title: 'Tags'
+  - title: '标签'
     url: '/tags'
 
 # Owner/author information
 owner:
   name:           Wangxin
-  avatar:         logo.png
-  bio:            "Your bio goes here. It shouldn't be super long but a good sentence or two should suffice."
+  avatar:         images/logo.png
+  bio:            "呵呵"
   email:          flybird1987@email.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        

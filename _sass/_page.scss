@@ -6,6 +6,23 @@ body {
 	overflow-x: hidden;
 }
 
+#ds-thread {
+	// margin: 40px 2px 20px 2px;
+		padding: 10px 15px;
+		background-color: $white;
+		@include rounded(3px);
+		@media #{$medium} {
+			margin-left: 10px;
+			margin-right: 10px;
+			padding: 20px 30px;
+		}
+		@media #{$large} {
+			max-width: 800px;
+			padding: 50px 80px;
+			margin: 0 auto 30px auto;
+		}
+}
+
 // Main
 // --------------------------------------------------
 .entry,
