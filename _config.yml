@@ -28,7 +28,7 @@ menu:
     submenu:
       - title: 'C++'
         url: '/cpp'
-      - title: '七七八八'
+      - title: '其他'
         url: '/others'
   - title: '艺术'
     url: '/art'
@@ -72,6 +72,7 @@ bing_verify:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/Berlin
 future:      true
+mathjax:     true
 highlighter: rouge
 markdown:    kramdown
 gems:
