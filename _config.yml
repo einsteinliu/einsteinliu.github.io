@@ -73,11 +73,7 @@ bing_verify:
 timezone:    Europe/Berlin
 future:      true
 highlighter: rouge
-
-markdown: maruku
-markdown_ext: markdown,mkd,mkdn,md
-
-# markdown:    kramdown
+markdown:    kramdown
 gems:
   - jekyll-sitemap
   - jekyll-paginate
