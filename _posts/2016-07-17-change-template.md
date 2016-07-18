@@ -80,11 +80,11 @@ tags: []
 image:
 
   feature:
-  
+
   credit:
-  
+
   creditlink:
-  
+
 comments:
 {% endraw %}
 所以image就是post的子变量，而image这个子变量又有一个子变量叫做feature，这个变量用于存放这篇文章的题图，比如我们使用image文件夹中的Caspar_David_Friedrich_Der_Monch_am_Meer_Google_Art_Project.jpg作为题图，我们就要在相应post的MD文件中加上：
@@ -92,9 +92,9 @@ comments:
 **image:**
 
   **feature: Caspar_David_Friedrich_Der_Monch_am_Meer_Google_Art_Project.jpg**
-  
+
   **credit: Der Mönch am Meer**
-  
+
   **creditlink: https://en.wikipedia.org/wiki/The_Monk_by_the_Sea**
 
 于是{% raw %}**{{post.image.feature}}**{% endraw %}就会被编译为字符串“Caspar_David_Friedrich_Der_Monch_am_Meer_Google_Art_Project.jpg”
@@ -126,8 +126,183 @@ comments:
 显然构成一个判断语句，意思是如果当前的 post 包含了题图，就加入题图元素：
 {% highlight html %}
 {% raw %}
-    <div class="entry-image-index">
-       <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}"></a>
-    </div>
+<div class="entry-image-index">
+   <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}"></a>
+</div>
 {% endraw %}
 {% endhighlight %}
+
+#### 一些代码效果图
+
+**category小标签：**
+
+代码：
+
+{% highlight html %}
+{% raw %}
+<ul class="entry-meta inline-list">
+  {% for item in (0..site.categories.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ cats_list[item] | strip_newlines }}{% endcapture %}
+  	<li><a href="#{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.categories[this_word].size }}</span></a></li>
+  {% endunless %}{% endfor %}
+</ul>
+{% endraw %}
+{% endhighlight %}
+**效果如下：**
+![tags_effect]({{ site.url }}\images\set_template\tags_effect.png)
+
+
+
+
+
+**category列表**
+
+代码：
+
+{% highlight html %}
+{% raw %}
+{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+  {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+  <span class="anchor-bookmark" id="{{ this_word }}"></span>
+	<article>
+	<h2 class="tag-heading">{{ this_word }}</h2>
+		<ul>
+	{% for post in site.tags[this_word] %}{% if post.title != null %}
+	  <li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	{% endif %}{% endfor %}
+		</ul>
+	</article><!-- /.hentry -->
+{% endunless %}{% endfor %}
+{% endraw %}
+{% endhighlight %}
+**效果如下：**
+![category_list]({{ site.url }}\images\set_template\category_list.png)
+
+
+
+
+
+**题图**
+
+代码：
+
+{% highlight html %}
+{% raw %}
+{% if post.image.feature %}
+    <div class="entry-image-index">
+      <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}"></a>
+      {% if post.image.credit %}<div class="image-credit">Image source: <a target="_blank" href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></div>
+      {% endif %}
+    </div><!-- /.entry-image -->
+{% endif %}
+{% endraw %}
+{% endhighlight %}
+**效果如下：**
+ ![image_feature]({{ site.url }}\images\set_template\image_feature.png)
+ 
+ 
+ 
+ 
+**带链接的文章**
+
+代码：
+
+{% highlight html %}
+{% raw %}
+{% if post.link %}
+      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
+{% else %}
+      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
+{% endif %}
+{% endraw %}
+{% endhighlight %}
+
+同时在文章的MD文件中添加link: http://xxxxxxxx 即可
+**效果如下：**
+
+![link_post]({{ site.url }}\images\set_template\link_post.png)
+
+
+
+
+
+**添加Continue Reading按钮**
+
+在MD文件中插入一行{% raw %}<!-- more -->{% endraw %}
+这一行后面的部分将隐藏，只有点开按钮后才会显示整篇文章：
+{% highlight html %}
+{% raw %}
+<div class="entry-content">
+   {% if post.content contains "<!-- more -->" %}
+       {{ post.content | split:"<!-- more -->" | first % }}
+       <div align="center">
+           <div markdown="0"><a href="{{ site.url }}{{ post.url }}" class="btn btn-info">Continue Reading ...</a></div>
+       </div>
+   {% else %}
+     {{ post.content }}
+   {% endif %}
+</div><!-- /.entry-content -->
+{% endraw %}
+{% endhighlight %}
+
+**效果如下：**
+
+![continue_reading]({{ site.url }}\images\set_template\continue_reading.png)
+
+
+
+
+**在根目录加入新文件夹，里面的index.html会被编译成一个页面**
+
+
+### 一些CSS设置位置
+
+**图片来源的html元素：**
+
+Image source link(image credit) in html(Remove the image source in the real case):
+{% highlight css %}
+{% raw %}
+{% if page.image.credit %}<div class="image-credit">Image source: <a target="_blank" href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></div><!-- /.image-credit -->{% endif %}
+{% endraw %}
+{% endhighlight %}
+**图片来源的CSS设置：**
+
+Image credit's css setting:
+
+/_sass/_page.css
+{% highlight css%}
+{% raw %}
+.image-credit {
+}
+{% endraw %}
+{% endhighlight %}
+**多说的CSS设置：**
+
+/_sass/_page.css
+{% highlight css%}
+{% raw %}
+#ds-thread {
+}
+{% endraw %}
+{% endhighlight %}
+
+**文章宽度的CSS设置（分中和大两种排版）：**
+
+/_sass/_page.css
+{% highlight css%}
+{% raw %}
+#post,
+#page {
+	.entry-content {
+		@media #{$large} {
+			max-width: 1200px;
+			}
+		}
+	}
+{% endraw %}
+{% endhighlight %}
+**以$开头的变量：**
+
+The values starts with $ are defined in:
+
+/_sass/_variables.scss

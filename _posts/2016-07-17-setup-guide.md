@@ -23,6 +23,8 @@ categories: [Tech]
 
 - 在**C:\tools\DevKit2**文件夹中打开控制台，执行命令 **ruby dk.rb init**，产生config.yml文件
 
+
+<!-- more -->
 - 编辑config.yml文件，并加入
 
   \-  **C:/tools/ruby23**
@@ -45,7 +47,6 @@ categories: [Tech]
      --with-xslt-include=C:\Chocolatey\lib\libxslt.1.1.28.0\build\native\include^
      --with-xslt-lib=C:\Chocolatey\lib\libxslt.redist.1.1.28.0\build\native\bin\v110\x64\Release\dynamic 回车
 
-  ​
 
 ### 新建Github页面并安装Jekyll模板
 
@@ -72,6 +73,13 @@ categories: [Tech]
   **输入Github的用户名密码回车，等待代码上传完成**
 
 - 从浏览器访问einsteinliu.github.io，新页面应该就可以访问了
+
+
+以后每次改动页面后，在页面代码所在文件夹中执行
+
+**bundle exec jekyll serve**
+
+页面就会重新编译
 
   ​
 
