@@ -72,7 +72,6 @@ bing_verify:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/Berlin
 future:      true
-mathjax:     true
 highlighter: rouge
 markdown:    kramdown
 gems:
@@ -88,7 +87,7 @@ sass:
 permalink:   /:categories/:title/
 
 # Amount of post to show on home page
-paginate: 5
+paginate: 8
 
 kramdown:
   input: GFM
