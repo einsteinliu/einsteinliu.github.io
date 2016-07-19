@@ -1,12 +1,14 @@
 ---
 layout: post
-title: Linear Classification
+title: Linear Classification Note
 description: "线性分类器笔记"
 tags: [线性分类器, 斯坦福大学课程笔记]
 categories: [Machine_Learning, Machine_Learning_Basic]
 ---
 
-### 得分函数
+### 打分函数
+
+现在我们面对的是一个图片的分类问题，比如把一幅图分类为牛，猫。机器学习算法就是为一幅未分类的图片针对某一个类别打一个分数，然后根据分值大小来判断这幅图片是否属于这个类别。而分类算法的目标之一就是找到这个函数。
 
 **Map/compute image pixels to the confidence score of each class**
 

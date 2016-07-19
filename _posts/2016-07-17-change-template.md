@@ -199,10 +199,10 @@ comments:
 {% endhighlight %}
 **效果如下：**
  ![image_feature]({{ site.url }}\images\set_template\image_feature.png)
+
  
- 
- 
- 
+
+
 **带链接的文章**
 
 代码：
@@ -306,3 +306,33 @@ Image credit's css setting:
 The values starts with $ are defined in:
 
 /_sass/_variables.scss
+
+
+
+### 插入数学公式
+
+
+官方教程，使用公式在head.html中插入以下代码段：
+{% highlight html %}
+{% raw %}
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+{% endraw %}
+{% endhighlight %}
+
+事实上这是不行的，因为安全问题，浏览器不会load http:// 的链接，所以使用以上代码的结果就是公式无法显示
+
+load的这个js脚本是一个MathJax.js文件，这个文件当然可以先存在本站，然后从本站加载。
+
+除了MathJax.js，这个脚本还会去/extensions/文件夹里找MathMenu.js和MathZoom.js文件。
+
+更容易的办法是在head中插入以下代码，可以绕过安全问题：
+
+{% highlight html %}
+{% raw %}
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+{% endraw %}
+{% endhighlight %}
