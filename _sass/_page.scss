@@ -520,7 +520,7 @@ ul.social-buttons li a:active {
 		margin-bottom: 20px;
 		@include font-rem(32);
 		color: $white;
-		text-shadow: 1px 1px 4px rgba($base-color, 0.6);
+		text-shadow: 2px 2px 8px rgba($base-color, 0.8);
 		display: block;
 		a {
 			color: $white;

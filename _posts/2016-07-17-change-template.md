@@ -308,6 +308,21 @@ The values starts with $ are defined in:
 /_sass/_variables.scss
 
 
+**博客大标题"Wangxin's Blog"的CSS**
+
+仍然是 /_sass/_page.css：
+
+.header-title-wrap
+
+里的
+
+h1{
+
+	大标题相关CSS样式设置
+	
+}
+
+
 
 ### 插入数学公式
 
@@ -336,3 +351,4 @@ load的这个js脚本是一个MathJax.js文件，这个文件当然可以先存�
 </script>
 {% endraw %}
 {% endhighlight %}
+
