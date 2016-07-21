@@ -8,7 +8,7 @@ categories: [Computer Vision, Machine Learning]
 
  PCA (**Principal component analysis**), just as its name shows, it computes the data set's internal structure, its "principal components".
 
-Considering a set of 2 dimensional data, for one data point, it has 2 dimensions $$x_1$$ and $$x_2$$ . Now we get **n** such data points . What is the relationship between the first dimension $$x_1$$ and the second dimension $$x_2$$ ? We compute the so called **covariance** to represent it:
+Considering a set of 2 dimensional data, for one data point, it has 2 dimensions $$x_1$$ and $$x_2$$ . Now we get **n** such data points . What is the relationship between the first dimension $$x_1$$ and the second dimension $$x_2$$ ? We compute the so called **covariance**:
 
 $$
 cov(x_1,x_2)=\frac{\displaystyle \sum_{i=1}^n{(x_1^i-\overline{x_1})(x_2^i-\overline{x_2})} }{n-1}
@@ -24,7 +24,7 @@ a_1>a_2>. . . >a_n   \\
 and\\
 b_1>b_2>. . . >b_n   \\
 then\\
-\frac{1}{n}\displaystyle \sum_{k=1}^n{a_k\cdot b_k}\leq(\frac{1}{n}\displaystyle \sum_{k=1}^na_k)(\frac{1}{n}\displaystyle \sum_{k=1}^nb_k)
+\frac{1}{n}\displaystyle \sum_{k=1}^n{a_k\cdot b_k}\geq(\frac{1}{n}\displaystyle \sum_{k=1}^na_k)(\frac{1}{n}\displaystyle \sum_{k=1}^nb_k)
 $$
 
 Which tells us a truth: 
