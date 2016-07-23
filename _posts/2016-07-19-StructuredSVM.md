@@ -3,7 +3,7 @@ layout: post
 title: Structural SVM with Latent Variables 论文笔记
 description: "Structural SVM论文笔记"
 tags: [线性分类器, 论文笔记, 机器学习, Optimization, SVM]
-categories: [Machine_Learning, Machine_Learning_Basic]
+categories: [Machine Learning, Machine Learning Basic]
 ---
 
 Structural SVM是SVM的一个变体，下文简写为SSVM

@@ -3,7 +3,7 @@ layout: post
 title: Linear Classification Note
 description: "线性分类器笔记"
 tags: [线性分类器, 斯坦福大学课程笔记]
-categories: [Machine_Learning, Machine_Learning_Basic]
+categories: [Machine Learning, Machine Learning Basic]
 ---
 
 ### 打分函数
