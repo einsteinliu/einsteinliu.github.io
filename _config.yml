@@ -24,7 +24,7 @@ menu:
       - title: '机器学习基础'
         url: '/ml-basic'
   - title: '技术基础'
-    url: '/Tech'
+    url: '/tech'
     submenu:
       - title: '程序语言'
         url: '/program'
