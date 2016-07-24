@@ -24,10 +24,10 @@ menu:
       - title: '机器学习基础'
         url: '/ml-basic'
   - title: '技术基础'
-    url: '/programming'
+    url: '/Tech'
     submenu:
-      - title: 'C++'
-        url: '/cpp'
+      - title: '程序语言'
+        url: '/program'
       - title: '其他'
         url: '/others'
   - title: '艺术'

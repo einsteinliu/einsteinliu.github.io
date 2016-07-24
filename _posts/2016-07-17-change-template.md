@@ -3,7 +3,7 @@ layout: post
 title: 改造Jekyll模板的技术细节
 description: "适用于Windows"
 tags: [网页搭建, 网络编程]
-categories: [Tech]
+categories: [Tech, Others]
 ---
 #### 框架的文件夹结构
 

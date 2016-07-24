@@ -3,6 +3,10 @@ layout: post-index
 title: Tag Archive
 description: "An archive of posts sorted by tag."
 comments: false
+image:
+  feature: klee.png
+  credit: Sparse Foliage
+  creditlink: http://www.wikiart.org/en/paul-klee/sparse-foliage-1934
 ---
 
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}

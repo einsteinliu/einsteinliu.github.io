@@ -3,7 +3,7 @@ layout: post
 title: 用Jekyll模板搭建Github页面-Windows
 description: "适用于Windows"
 tags: [网页搭建, 网络编程]
-categories: [Tech]
+categories: [Tech, Others]
 ---
 ### 安装基本软件
 

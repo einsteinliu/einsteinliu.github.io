@@ -3,7 +3,7 @@ layout: post
 title: Switch to another window using C#
 description: "C# tricks"
 tags: [C#]
-categories: [Tech]
+categories: [Tech, Program]
 ---
 
 {% raw %}

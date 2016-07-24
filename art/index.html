@@ -4,6 +4,10 @@ title: "Art"
 description: "Articles related to Art"
 tags: [艺术史, 艺术理论, 美学]
 comments: false
+image:
+  feature: muses.jpg
+  credit: Apollo and the Muses on Mount Parnassus
+  creditlink: https://commons.wikimedia.org/wiki/File:Angelica_Kauffmann_-_Apollo_and_the_Muses_on_Mount_Parnassus.jpg
 ---
 {% capture site_cats %}{% for cat in site.categories %}{{ cat | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign cats_list = site_cats | split:',' | sort %}
