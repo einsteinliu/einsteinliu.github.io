@@ -141,6 +141,7 @@ public class Person
 public partial class MainWindow : Window
 {
 	public ObservableCollection<Person> Persons { get; set; }
+    public string selectedName { get; set; }
 	public MainWindow()
 	{
          Persons = new ObservableCollection<Person>();
@@ -158,3 +159,40 @@ So we can see that Person as a class of cause can not be directly presented by L
 ```
 
 Which means we want to display DataContext.Persons[k].Name as the ListBox's kth item. In this case the kth item will display ***this.Persons[k].Name.***
+
+------
+
+All code Combined
+
+C# Part:
+
+```c#
+public partial class MainWindow : Window
+{
+        public ObservableCollection<string> Names { get; set; }
+        public string selectedName { get; set; }
+        public MainWindow()
+        {
+            Names = new ObservableCollection<string>() { "hehe", "haha" };
+            InitializeComponent();
+            DataContext = this;
+        }
+}
+```
+
+XAML Part:
+
+```html
+<Window x:Class="DataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBinding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="400.838">
+    <Grid Margin="0,0,4,-0.2">
+        <ListBox x:Name="listBox" ItemsSource="{Binding Names}" SelectedItem="{Binding selectedName, Mode=TwoWay}"/>
+    </Grid>
+</Window>
+```
