@@ -1,14 +1,17 @@
 .highlight {
 	margin-bottom: 1.5em;
-	@include font(12);
+	@include font(16);
 	color: #d0d0d0;
 	border: 1px solid darken($body-color, 5);
-	background-color: #272822;
+	#background-color: #272822;
+	background-color: #f0f0f0;
 	@include rounded(3px);
 	pre {
 		position: relative;
 		margin: 0;
 		padding: 1em;
+		overflow-y: scroll;
+		overflow-x: scroll;
 	}
 	.lineno { padding-right: 24px; color: #8f908a;}
 	.hll { background-color: #49483e }
