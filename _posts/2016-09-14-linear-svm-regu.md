@@ -10,7 +10,11 @@ categories: [Machine Learning, Machine Learning Basic]
 
 对于训练集中的第i个样本$$(x_i,y_i)$$，有损失函数如下：
 
+
+
 $$L_i= \sum_{j≠y_i}max(0,w_j^T\cdot x_i−w_{y_i}^T\cdot x_i+Δ)$$
+
+
 
 其中，$$w_j^T\cdot x_i$$是将$$x_i$$归于j类的得分，而$$w_{y_i}^T\cdot x_i$$ 是正确归类（归于$$y_i$$类）的得分，$$\omega_i$$ 是$$W$$的第$$j$$行。
 
@@ -27,21 +31,33 @@ $$L_i= \sum_{j≠y_i}max(0,w_j^T\cdot x_i−w_{y_i}^T\cdot x_i+Δ)$$
 ### 正则化惩罚
 
 解决以上两个问题的方法是在损失函数中加入惩罚项，对权值矩阵进行惩罚：
+
+
 $$
 R(W)=||W||^2=\sum{W\cdot W}
 $$
+
+
 于是加入惩罚项后的损失函数为：
+
+
 $$
 L=\frac{1}{N}\sum_iL_i+\lambda R(\omega)
 $$
+
+
 前面的项是所谓的“数据损失”（data loss）项，其现实含义是权值矩阵$$W$$作用于所有sample后产生的损失之和。
 
 后面的项是所谓的“正则化损失”（regularization loss)，其现实含义是权值矩阵$$W$$本身的结构产生的损失：**这一项和数据无关，只跟权值矩阵有关**。
 
 完全展开形态如下：
+
+
 $$
 L=\frac{1}{N}\sum_i \sum_{j≠y_i}max(0,w_j^T\cdot x_i−w_{y_i}^T\cdot x_i+Δ)+\lambda\sum{W\cdot W}
 $$
+
+
 重复一下符号的含义：
 
 N代表训练集中一共有N个样本
