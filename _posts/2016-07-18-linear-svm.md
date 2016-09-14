@@ -34,7 +34,10 @@ $$x_i$$  will be a 1 dimention vector with the length of **D=32x32x3=3072**
 Parameter matrix **W** has the size of **[KxD]**, it is often called weights
 **b** of  size **[Kx1]** is often called bias vector
 In this way, **W** is evaluating $$x_i$$'s confidence score for **K** categories at the same time
+
+
 <!-- more -->
+
 #### 得分函数的现实意义
 
 **W**使用权值来判断每一个像素的重要性，比如一个用来给ship分类的**W**，可能在图片的四周赋给RGB通道中蓝色通道的权值就会比较大，因为一般ship的图片很可能是被蓝色的海洋包围的
@@ -82,7 +85,7 @@ $$f(x_i,W)=W\cdot x_i$$
 
 $$L_i= \sum_{j≠y_i}max(0,w_j^T\cdot x_i−w_{y_i}^T\cdot x_i+Δ)$$
 
-其中，$$w_j^T\cdot x_i$$是将$$x_i$$归于j类的得分，而$$w_{y_i}^T\cdot x_i$$ 是正确归类（归于$$y_i$$类）的得分
+其中，$$w_j^T\cdot x_i$$是将$$x_i$$归于j类的得分，而$$w_{y_i}^T\cdot x_i$$ 是正确归类（归于$$y_i$$类）的得分，$$\omega_i$$ 是$$W$$的第$$j$$行。
 ​	
 正常情况下，正确归类的得分是正的，而且很大，分为j类（错误分类）的得分是负的，而且很小
 这样的话，错误分类的得分减去正确分类的得分，会得到一个很小的负数
