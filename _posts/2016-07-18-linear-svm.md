@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Linear Classification Note
-description: "线性分类器笔记"
-tags: [线性分类器, 斯坦福大学课程笔记]
+title: Linear Classification
+description: "SVM"
+tags: [SVM, Stanford Machine Learning Notes]
 categories: [Machine Learning, Machine Learning Basic]
 ---
 

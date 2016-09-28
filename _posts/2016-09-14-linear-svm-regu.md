@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 多类SVM的Regularization 
-description: "线性分类器笔记"
-tags: [线性分类器, 斯坦福大学课程笔记]
+title: SVM:multi-class SVM regularization 
+description: "SVM"
+tags: [SVM, Stanford Machine Learning Notes]
 categories: [Machine Learning, Machine Learning Basic]
 ---
 
