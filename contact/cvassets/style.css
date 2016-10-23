@@ -42,7 +42,7 @@ Primary use:	CV/Resume, Portfolio, Perosnal Website
 .fix {
   overflow: hidden;
 }
-/* p {
+p {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 12pt;
@@ -50,7 +50,7 @@ Primary use:	CV/Resume, Portfolio, Perosnal Website
 }
 a {
   color: #ffffff;
-} */
+}
 .clear {
   clear: both;
 }
@@ -87,7 +87,7 @@ a {
   -webkit-animation-name: fadeIn;
 }
 /* style for Typography */
-/* h2,
+h2,
 h3 {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -111,7 +111,7 @@ h5 {
   margin: 0px;
   padding: 0px;
   line-height: 15pt;
-} */
+}
 .fa {
   font-size: 22px;
 }
