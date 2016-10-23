@@ -49,7 +49,7 @@ Primary use:	CV/Resume, Portfolio, Perosnal Website
   line-height: 17pt;
 }
 a {
-  color: #ffffff;
+  color: rgba(#222,0.8);
 }
 .clear {
   clear: both;
