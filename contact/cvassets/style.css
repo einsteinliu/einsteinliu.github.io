@@ -149,7 +149,7 @@ body {
 .sidebar .heading .feature-img img {
   width: 100%;
 }
-.sidebar .heading .button-collapse {
+/* .sidebar .heading .button-collapse {
   display: block !important;
 }
 .sidebar .heading .nav-icon {
@@ -178,7 +178,7 @@ body {
 }
 .sidebar .heading nav .side-nav li:hover {
   background-color: transparent !important;
-}
+} */
 .sidebar .heading .title {
   position: absolute;
   right: 11px;
