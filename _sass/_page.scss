@@ -107,9 +107,75 @@ body {
 
 // Single Post and Page
 // --------------------------------------------------
+.tag-meta {
+	@include font-rem(16);
+	//text-transform: uppercase;
+	color: lighten($base-color,60);
+	a {
+		color: lighten($base-color,60);
+	}
+	.vcard {
+		&:before {
+			content: " by ";
+		}
+	}
+	.tag {
+		display: inline-block;
+		margin: 4px;
+		color: $white;
+		@include rounded(3px);
+		background-color: lighten($base-color,50);
+		span {
+			float: left;
+			padding: 2px 6px;
+		}
+		.count {
+			background-color: lighten($base-color,40);
+			@include border-radius(3px,3px,0,0);
+		}
+		&:hover {
+			background-color: lighten($base-color,40);
+		}
+	}
+	.entry-reading-time {
+		float: right;
+	}
+}
+
+.list-meta {
+	@include font-rem(20);
+	//text-transform: uppercase;
+	color: lighten($base-color,60);
+	a {
+		color: lighten($base-color,60);
+	}
+	.vcard {
+		&:before {
+			content: " by ";
+		}
+	}
+	.tag {
+		display: inline-block;
+		margin: 2px;
+		color: $white;
+		@include rounded(3px);
+		background-color: #5da4d9;
+		span {
+			float: left;
+			padding: 2px 4px;
+		}
+		&:hover {
+			background-color: lighten($base-color,40);
+		}
+	}
+	.entry-reading-time {
+		float: right;
+	}
+}
+
 .entry-meta {
 	@include font-rem(12);
-	text-transform: uppercase;
+	//text-transform: uppercase;
 	color: lighten($base-color,60);
 	a {
 		color: lighten($base-color,60);
@@ -555,7 +621,7 @@ ul.social-buttons li a:active {
 		height: 100%;
 		padding: 0;
 		@media #{$large} {
-			max-width: 900px;
+			max-width: 1200px;
 		}
 	}
 }
@@ -654,7 +720,9 @@ ul.social-buttons li a:active {
 	padding-left: 10px;
 	width: 100%;
 	border-bottom: 1px solid gray;
-	border-left: 1px solid;
+	//border-left: 1px solid;
+	//border-right: 1px solid;
+	border-top: 1px solid;	
 	height: 50px;
 	text-decoration: none;
 }
@@ -667,6 +735,8 @@ ul.social-buttons li a:active {
 .sub-item:hover {
 	border-bottom-color: $header-margin;
 	border-left-color: $header-margin;
+	border-right-color: $header-margin;
+	border-top-color: $header-margin;
 }
 
 .button-twitter {

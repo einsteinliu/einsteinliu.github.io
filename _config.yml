@@ -14,33 +14,35 @@ url:
 #   To create sub categories. add a submenu item
 # See the example
 menu:
-  - title: '首页'
+  - title: 'Main'
     url: '/'
-  - title: '机器学习'
+  - title: 'AI Study'
     url: '/machine-learning'
     submenu:
-      - title: '计算机视觉'
+      - title: 'Computer Vision'
         url: '/computer-vision'
-      - title: '机器学习基础'
+      - title: 'Basics Knowledge'
         url: '/ml-basic'
-  - title: '技术基础'
+  - title: 'Techniques'
     url: '/tech'
     submenu:
-      - title: '程序语言'
+      - title: 'Programming Languages'
         url: '/program'
-      - title: '其他'
+      - title: 'Other Techniques'
         url: '/others'
-  - title: '艺术'
-    url: '/art'
-    submenu:
-      - title: '艺术史'
-        url: '/art-history'
-      - title: '艺术理论'
-        url: '/art-theory'
-      - title: '美学'
-        url: '/aesthetics'
-  - title: '标签'
+#  - title: '艺术'
+#    url: '/art'
+#    submenu:
+#      - title: '艺术史'
+#        url: '/art-history'
+#      - title: '艺术理论'
+#        url: '/art-theory'
+#      - title: '美学'
+#        #url: '/aesthetics'
+  - title: 'Tags'
     url: '/tags'
+  - title: 'Curriculum Vitae'
+    url: '/contact'
 
 # Owner/author information
 owner:
