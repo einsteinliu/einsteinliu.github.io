@@ -5,6 +5,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 {% include head.html %}
+
+{% include browser-upgrade.html %}
+{% include header.html %}
+
  <!-- FAVICON -->
 <link rel="icon" href="http://demo.deviserweb.com/cv/assets/images/favicon.ico">
 <link rel="apple-touch-icon" sizes="72x72" href="http://demo.deviserweb.com/cv/assets/images/apple-icon-72x72.png">
@@ -29,8 +33,6 @@
 
 <body id="post-index" {% if page.image.feature %}class="feature"{% endif %}>
 
-{% include browser-upgrade.html %}
-{% include header.html %}
 
 <div id="main" role="main">
   {{ content }}
