@@ -16,7 +16,7 @@ url:
 menu:
   - title: 'Main'
     url: '/'
-  - title: 'AI Study'
+  - title: 'CV Study'
     url: '/machine-learning'
     submenu:
       - title: 'Computer Vision'
