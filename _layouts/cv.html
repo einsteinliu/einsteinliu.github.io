@@ -5,26 +5,40 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 {% include head.html %}
+
+ <!-- FAVICON -->
+<link rel="icon" href="http://demo.deviserweb.com/cv/assets/images/favicon.ico">
+<link rel="apple-touch-icon" sizes="72x72" href="http://demo.deviserweb.com/cv/assets/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://demo.deviserweb.com/cv/assets/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://demo.deviserweb.com/cv/assets/images/apple-icon-114x114.png">
+<!-- ========================================
+		Stylesheets
+==========================================--> 
+<!-- MATERIALIZE CORE CSS -->
+<link href="./cvassets/materialize.min.css" rel="stylesheet">
+<!-- FONTS -->
+<link href="./cvassets/css" rel="stylesheet" type="text/css">
+<!-- CUSTOM STYLE -->
+<link href="./cvassets/style.css" rel="stylesheet">        
+<!-- RESPONSIVE CSS-->
+<link href="./cvassets/responsive.css" rel="stylesheet">
+
+<!-- COLORS -->        
+<link rel="alternate stylesheet" href="http://demo.deviserweb.com/cv/assets/css/colors/red.css" title="red" disabled="">
+<link rel="alternate stylesheet" href="http://demo.deviserweb.com/cv/assets/css/colors/purple.css" title="purple" disabled="">
+<link rel="alternate stylesheet" href="http://demo.deviserweb.com/cv/assets/css/colors/orange.css" title="orange" disabled="">
+<link rel="alternate stylesheet" href="http://demo.deviserweb.com/cv/assets/css/colors/green.css" title="green" disabled="">
+<link rel="stylesheet" href="./cvassets/lime.css" title="lime">
+<!-- STYLE SWITCH STYLESHEET ONLY FOR DEMO -->
+<link rel="stylesheet" href="./cvassets/demo.css">
+
+<script type="text/javascript" charset="UTF-8" src="./cvassets/common.js"></script><script type="text/javascript" charset="UTF-8" src="./cvassets/util.js"></script><script type="text/javascript" charset="UTF-8" src="./cvassets/stats.js"></script></head>
 </head>
 {% include browser-upgrade.html %}
 <body>
 {% include browser-upgrade.html %}
 {% include header.html %}
 
-<div class="entry-header">
-  {% if page.image.credit %}<div class="image-credit"><a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></div><!-- /.image-credit -->{% endif %}
-  {% if page.image.feature %}
-    <div class="entry-image">
-      <img src="{{ site.url }}/images/{{ page.image.feature }}" alt="{{ page.title }}">
-    </div><!-- /.entry-image -->
-  {% endif %}
-  <div class="header-title">
-    <div class="header-title-wrap">
-      <h1>{{ site.title }}</h1>
-      <h2>{{ page.title }}</h2>
-    </div><!-- /.header-title-wrap -->
-  </div><!-- /.header-title -->
-</div><!-- /.entry-header -->
 
 <!--div class="entry-header">
 </div><!-- /.entry-header -->
