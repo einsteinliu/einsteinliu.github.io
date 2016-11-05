@@ -45,7 +45,7 @@ Primary use:	CV/Resume, Portfolio, Perosnal Website
 p {
   font-family: 'Roboto', sans-serif;
   font-weight: 450;
-  font-size: 14pt;
+  font-size: 13pt;
   line-height: 15pt;
 }
 a {
@@ -304,7 +304,7 @@ body {
   padding-right: 0px !important;
 }
 .custom-content-wrapper {
-  padding-right: 30px;
+  padding-right: 0px;
   margin-bottom: 10px;
   border-bottom: 1px solid #bdbdbd;
 }
@@ -313,7 +313,7 @@ body {
 }
 .custom-content-wrapper h3 {
   margin: 0px;
-  font-size: 15pt;
+  font-size: 14pt;
   line-height: 20pt;
 }
 .custom-content-wrapper h3 span {
@@ -330,10 +330,10 @@ body {
   margin-bottom: 18px;
 }
 .custom-content-wrapper li {
-  /*list-style-type: disc;
+  list-style-type: disc;
   list-style-position: inside;
-  text-indent: -1em;
-  padding-left: 1em;*/
+  text-indent: -2em;
+  padding-left: 1em;
 }
 
 /* style for
