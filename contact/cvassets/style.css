@@ -341,11 +341,13 @@ body {
 .custom-content-wrapper ul {
 	padding-left:-20px;
 }
+
+/*for all*/
 .custom-content-wrapper li {
 	  list-style-type: disc;
 	  list-style-position: inside;
 	  text-indent: -2em;
-	  padding-left: 0px;
+	  padding-left: 0em;
 	  font-family: 'Roboto', sans-serif;
 	  font-weight: 450;
 	  font-size: 13pt;
@@ -353,19 +355,32 @@ body {
 	  margin-top: 0px;
 	  margin-bottom: 18px;
 }
-
+/*for firefox*/
 @-moz-document url-prefix() {
 	.custom-content-wrapper li {
-	  list-style-type: disc;
-	  list-style-position: inside;
-	  text-indent: -1em;
+	  text-indent: -0.9em;
 	  padding-left: 0em;
-	  font-family: 'Roboto', sans-serif;
-	  font-weight: 450;
-	  font-size: 13pt;
-      line-height: 15pt;
-	  margin-top: 0px;
-      margin-bottom: 18px;
+	}
+}
+/*for chrome and safari*/
+@media screen and (-webkit-min-device-pixel-ratio:0){
+	.custom-content-wrapper li {
+		text-indent: -2em;
+		padding-left: 0em;
+	}
+}
+/*for ie*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.custom-content-wrapper li {
+	  text-indent: -1.3em;
+	  padding-left: 0em;
+	}
+}
+/*for edge*/
+@supports (-ms-accelerator:true) {
+	.custom-content-wrapper li {
+	  text-indent: -1.3em;
+	  padding-left: 0em;
 	}
 }
 
