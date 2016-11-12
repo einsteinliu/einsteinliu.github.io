@@ -10,29 +10,29 @@ Sepp Hochreiter was graduated from Technische Universität München, LSTM was in
 
 Today he comes by Munich and gives a lecture in Fakultät Informatik.
 
-At first Hochreiter praised how hot is Deep Learning (to be referred as DL) around the world these days, especially LSTM, which is now used in the new version of google translate published a few days ago. The improvements DL made in the fields of vision and NLP are very impressive.
+At first, Hochreiter praised how hot is Deep Learning (to be referred as DL) around the world these days, especially LSTM, which is now used in the new version of google translate published a few days ago. The improvements DL made in the fields of vision and NLP are very impressive.
 
-Then he starts to tell the magic of DL, taking face recognition as an example, the so called CNN (Convolution Neuro Networks):
+Then he starts to tell the magic of DL, taking face recognition as an example, the so-called CNN (Convolution Neuro Networks):
 
 ![dl_faces]({{ site.url }}\images\machine_learning\dl_faces.jpg)
 
 <!-- more -->
 
-This is a commonly used case, input layer are pixels, the output of the first layer will be the edges and corners, the second layer will output some local structures such as nose, eyes and ears, the last layer will output a part of a whole face. 
+This is a commonly used case, input layer is pixels, the output of the first layer will be the edges and corners, the second layer will output some local structures such as nose, eyes and ears, the last layer will output a part of a whole face. 
 
 Then he explained a case which is not very commonly used: using DL to look for drugs.
 
 The first layer will output some chemical radicals, such as hydroxyl and carboxyl
 
-The second layer will output the interaction center
+The second layer will output the interaction centre
 
-The third layer will output pharmacophore, which is biological active and can then be used to design drugs.
+The third layer will output pharmacophore, which is biologically active and can then be used to design drugs.
 
 
 
 **The next topic is Vanishing Gradient Problem**
 
-In the back-propagation algorithm, we compute the gradient on each neuron and multiply them using the train rule, for the neighboring update value we have：
+In the back-propagation algorithm, we compute the gradient on each neurone and multiply them using the chain rule, for the neighbouring update value we have：
 
 
 
@@ -58,11 +58,11 @@ $$\| \sigma^1\|=\|\sigma^T \prod_i J_i\|\approx0 $$
 
 We can see that the closer to the 1st layer, the smaller is the update value, when the depth of DL gets big, we can hardly update the layers close to the 1st layer, which means we can not train the DL network.
 
-This is the always existed barrier for using deep network.
+This is the always existed barrier for using the deep network.
 
 The solutions for this problem are:
 
-ReLU：take a look at my blog [NN: one neuron](https://einsteinliu.github.io/machine%20learning/machine%20learning%20basic/NN1/)
+ReLU：take a look at my blog [NN: one neurone](https://einsteinliu.github.io/machine%20learning/machine%20learning%20basic/NN1/)
 
 LSTM：control the gradient
 
@@ -70,11 +70,11 @@ High way nets
 
 Residual nets
 
-Hochreiter said that he is now working on the so called [Self-normalization Neuro Network](https://www.researchgate.net/project/Self-normalizing-Neural-Networks), it can be used to construct massive AI system such as home-service robot, robot for Mars landing.
+Hochreiter said that he is now working on the so-called [Self-normalization Neuro Network](https://www.researchgate.net/project/Self-normalizing-Neural-Networks), it can be used to construct massive AI system such as home service robot, a robot for Mars landing.
 
 **Then he begins to talk about some cases**
 
-The first case is German shopping website Zalando, zalando hope to follow the fashion from learning fashion blogs with DL by analyzing the texts and images to recommend customers products. The recommendation will be different from the location, the customers from Milan and San Francisco will see different product recommendations, as different cities have different taste, which means they will trace the local fashion hotspot. One picture gets a lot of likes, then we need to analyze why? And then recommend you products.
+The first case is German shopping website Zalando, Zalando hope to follow the fashion from learning fashion blogs with DL by analysing the texts and images to recommend customers products. The recommendation will be different from the location, the customers from Milan and San Francisco will see different product recommendations, as different cities have different taste, which means they will trace the local fashion hotspot. One picture gets a lot of likes, then we need to analyse why? And then recommend you products.
 
 Another good thing for LSTM is **Uniform Credit Assignment**
 
@@ -92,7 +92,7 @@ The same information "man running" in these 3 sentences will get the same credit
 
 **Because LSTM can save the memory, it keeps what you have seen, it keeps ideas, situations.**
 
-This specialty is very useful when dealing with videos, because in some situation you can not see a lot from one single image, you should check the video. For example, one man riding a bike is waving his left hands to turn left.
+This speciality is very useful when dealing with videos, because in some situation you can not see a lot from one single image, you should check the video. For example, one man riding a bike is waving his left hands to turn left.
 
 Assume that at $$t_1$$ he is waving his left hand, put it down at $$t_2$$ and turn left really at $$t_3$$.
 
@@ -110,7 +110,7 @@ Then he referred a Zalando's advertisement to talk about DL's drawbacks:
 
 ![zalando]({{ site.url }}\images\machine_learning\zalando.jpg)
 
-The two red shoes on the girls hands will be captioned as red wine, wrongly. Why? Because in the images of the training set, the red things on someone's hand are mostly red wine, what's more, the shoes in the training images are mostly wore by someone, on the ground, so a pair of red shoes in the hands will be assigned a very probability to be shoes.
+The two red shoes on the girl's hands will be captioned as red wine, wrongly. Why? Because in the images of the training set, the red things on someone's hand are mostly red wine, what's more, the shoes in the training images are mostly worn by someone, on the ground, so a pair of red shoes in the hands will be assigned a very probability to be shoes.
 
 In order to conquer this drawback, a very large training set is needed, that's why we name it "big data" .
 
@@ -118,13 +118,13 @@ But how can we get so many data? Taking auto drive as an example, we can found a
 
 **Another problem is sometimes the images are classified correctly wrongly.**
 
-What that means?
+What does that mean?
 
-For example in the competition of ImageNets, some one want to classify a image, showing two people playing ping-pong ball,  he classified the image to "ping-pong ball" correctly.
+For example in the competition of ImageNets, someone wants to classify an image, showing two people playing ping-pong ball,  he classified the image to "ping-pong ball" correctly.
 
-But the ping-pong ball in this image is flying very fast and its shape is stretched, which is astonishingly classified as "ping-pong ball" correctly. Does it means that his algorithm is very good and robust? Not really, the reason that his algorithm classified the image to "ping-pong ball" is not because it recognize the stretched ball  but simply it recognized the ping-pong table in the image. 
+But the ping-pong ball in this image is flying very fast and its shape is stretched, which is astonishingly classified as "ping-pong ball" correctly. Does it mean that his algorithm is very good and robust? Not really, the reason that his algorithm classified the image to "ping-pong ball" is not because it recognise the stretched ball  but simply it recognised the ping-pong table in the image. 
 
-Which means, for the training set, we only provide the class(caption) of "ping-pong ball" but not "ping-pong table". But both of the ball and table always appear at the same time, the training algorithm consider the content of table as a ball. Then we can imagine that if we want the algorithm to classify a image showing a man is playing ping-pong against the wall, it will fail.
+Which means, for the training set, we only provide the class(caption) of "ping-pong ball" but not "ping-pong table". But both of the ball and tables always appear at the same time, the training algorithm considers the content of table as a ball. Then we can imagine that if we want the algorithm to classify an image showing a man is playing ping-pong against the wall, it will fail.
 
 **The last stage: Q&A, most of the questions are boring**
 
@@ -139,4 +139,3 @@ Hochreiter answered: you are dreaming, enslaving human with such simple equation
 That's all I recorded, after finish enjoying the free drinks and pizza, I returned home.
 
 ![Hochreiter]({{ site.url }}\images\machine_learning\Hochreiter.jpg)
-
