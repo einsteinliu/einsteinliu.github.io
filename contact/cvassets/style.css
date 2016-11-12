@@ -45,7 +45,7 @@ Primary use:	CV/Resume, Portfolio, Perosnal Website
 p {
   font-family: 'Roboto', sans-serif;
   font-weight: 450;
-  font-size: 13pt;
+  font-size: 12pt;
   line-height: 15pt;
 }
 a {
@@ -346,7 +346,7 @@ body {
 .custom-content-wrapper li {
 	  list-style-type: disc;
 	  list-style-position: inside;
-	  text-indent: -2em;
+ 	  text-indent: -2em;
 	  padding-left: 0em;
 	  font-family: 'Roboto', sans-serif;
 	  font-weight: 450;
