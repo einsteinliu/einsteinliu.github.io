@@ -230,6 +230,7 @@ header .entry-meta {
 		box-shadow: 0 0 0 0, 0 6px 12px rgba($black,0.1);
 		@include rounded(3px);
 		@media #{$medium} {
+			max-width: 600px;
 			margin-left: 10px;
 			margin-right: 10px;
 			padding: 20px 30px;
