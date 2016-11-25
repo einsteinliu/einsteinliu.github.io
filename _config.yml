@@ -41,7 +41,7 @@ menu:
 #        #url: '/aesthetics'
   - title: 'Tags'
     url: '/tags'
-  - title: 'Résumé'
+  - title: 'Resume'
     url: '/contact'
 
 # Owner/author information

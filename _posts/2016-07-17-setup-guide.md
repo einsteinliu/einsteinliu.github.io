@@ -11,13 +11,19 @@ categories: [Tech, Others]
 
 - 因为Jekyll是用Ruby写的，所以要安装Ruby，在控制台中输入**choco install ruby -y**回车
 
-- 关闭控制台，然后再打开控制台并输入**gem install jekyll**，这样Jekyll就装好了
+- 关闭控制台，然后再打开控制台并输入**gem install jekyll**，这样Jekyll就装好了：如果出现ssl3错误按照[以下步骤（点我看原文）](https://gist.github.com/luislavena/f064211759ee0f806c88)解决：
+
+  在 https://rubygems.org/pages/download 下载最新版的rubygem
+
+  cmd输入 **gem install --local C:\rubygems-update-x.x.xx.gem**：local后面即刚下载好的gem文件
+
+  然后输入**update_rubygems --no-ri --no-rdoc**
+
+  结束后再输入**gem install jekyll**，应该就可以了
 
 - 重新打开控制台，输入**chcp 65001**避免编码问题
 
 - 安装Ruby开发环境，在控制台中输入：
-
-  **choco install ruby -version 2.2.4**
 
   **choco install ruby2.devkit**
 
@@ -25,7 +31,10 @@ categories: [Tech, Others]
 
 
 <!-- more -->
-- 编辑config.yml文件，并加入
+
+以下内容参照[jekyll官网安装说明](http://jekyllrb.com/docs/windows/#installation)
+
+- 编辑config.yml文件，并在最后加入
 
   \-  **C:/tools/ruby23**
 
@@ -39,18 +48,26 @@ categories: [Tech, Others]
 
   **cinst -Source "https://go.microsoft.com/fwlink/?LinkID=230477" libiconv** 回车
 
+  输入以下一大段命令
+
+  ```powershell
   gem install nokogiri --^
      --with-xml2-include=C:\Chocolatey\lib\libxml2.2.7.8.7\build\native\include^
      --with-xml2-lib=C:\Chocolatey\lib\libxml2.redist.2.7.8.7\build\native\bin\v110\x64\Release\dynamic\cdecl^
      --with-iconv-include=C:\Chocolatey\lib\libiconv.1.14.0.11\build\native\include^
      --with-iconv-lib=C:\Chocolatey\lib\libiconv.redist.1.14.0.11\build\native\bin\v110\x64\Release\dynamic\cdecl^
      --with-xslt-include=C:\Chocolatey\lib\libxslt.1.1.28.0\build\native\include^
-     --with-xslt-lib=C:\Chocolatey\lib\libxslt.redist.1.1.28.0\build\native\bin\v110\x64\Release\dynamic 回车
+     --with-xslt-lib=C:\Chocolatey\lib\libxslt.redist.1.1.28.0\build\native\bin\v110\x64\Release\dynamic
+  ```
+
+   回车
 
 
 ### 新建Github页面并安装Jekyll模板
 
 - 我的模板来自[**HPSTR**](https://github.com/mmistakes/hpstr-jekyll-theme)，从这里把模板fork到自己的Github
+
+- 也可以自己找喜欢的模板，在[Jekyll模板库](http://jekyllthemes.org/)
 
 - 建立自己的Github主页，在自己的Github中建立一个新的depository，命名为username.github.io，**这里的username必须是自己的github用户名**，比如我的用户名是einsteinliu，就必须新建一个叫einsteinliu.github.io的Depository。
 
