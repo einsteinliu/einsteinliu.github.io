@@ -339,13 +339,31 @@ body {
 } */
 
 .custom-content-wrapper ul {
-	padding-left:-20px;
+	/*list-style-image: url('red_bullet.png');*/
+	padding-left:0px;
+	margin-left:-20px;
 }
 
 /*for all*/
-.custom-content-wrapper li {
-	  list-style-type: disc;
-	  list-style-position: inside;
+.custom-content-wrapper li {	
+	height: 33px;
+    background: url('bullet.png') no-repeat 3px 0.4em;
+	list-style-position: outside;
+    list-style: none; /* Get rid of the default bullet points */
+	text-indent: 0px;	
+    padding-left: 20px; /* Offsets the text. Needs to be at least the width of your image */
+    line-height: 20px; /* Might have to play with this value a bit */
+	font-family: 'Roboto', sans-serif;
+	font-weight: 450;
+	font-size: 13pt;
+	margin-top: 0px;
+	margin-bottom: 18px;
+	  
+/* 	  /*list-style-type: none;	  
+	  height: 33px;
+	  background: url('red_bullet.png') no-repeat left top;
+	  list-style: none;
+	  /*list-style-position: inside;
  	  text-indent: 0em;
 	  padding-left: 0em;
 	  font-family: 'Roboto', sans-serif;
@@ -353,10 +371,10 @@ body {
 	  font-size: 13pt;
       line-height: 15pt;
 	  margin-top: 0px;
-	  margin-bottom: 18px;
+	  margin-bottom: 18px; */
 }
-
-/*for firefox*/
+/*
+/*for firefox
 @-moz-document url-prefix() {
 	.custom-content-wrapper li {
 	  text-indent: -0.9em;
@@ -376,7 +394,7 @@ body {
 	} 
 }
 
-/*for chrome and safari*/
+/*for chrome and safari
 @media screen  and (-webkit-min-device-pixel-ratio:0){
 	
 	.custom-content-wrapper li {
@@ -384,21 +402,21 @@ body {
 		padding-left: 0em;
 	}
 }
-/*for ie*/
+/*for ie
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	.custom-content-wrapper li {
 	  text-indent: -1.3em;
 	  padding-left: 0em;
 	}
 }
-/*for edge*/
+/*for edge
 @supports (-ms-accelerator:true) {
 	.custom-content-wrapper li {
 	  text-indent: -1.3em;
 	  padding-left: 0em;
 	}
 }
-
+*/
 /* style for
 
 *****  Interests  *****

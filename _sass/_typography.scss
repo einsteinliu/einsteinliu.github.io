@@ -96,6 +96,7 @@ blockquote {
 tt, code, kbd, samp, pre {
 	font-family: $code-font;
 }
+
 p,
 li { 
 	code {
@@ -109,6 +110,7 @@ li {
 		@include rounded(3px);
 	}
 }
+
 pre {
 	@include font-rem(12);
 	line-height: 1.5;
