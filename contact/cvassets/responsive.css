@@ -1,8 +1,11 @@
 /* Smartphones (landscape) */
 @media only screen and (min-width: 321px) and (max-device-width: 568px) {
-/*   .container {
-    width: 100% !important;
-  } */
+   .container {
+    width: 90% !important;
+  } 
+  .sidebar .heading .feature-img{
+	  padding-top: 30px;
+  }
   /* Sidebar Style*/
   .sidebar .heading .title{
 	  padding-left: 50px;
@@ -49,9 +52,12 @@
 }
 /* Smartphones (portrait) */
 @media only screen and (max-width: 320px) {
-/*   .container {
-    width: 100% !important;
-  } */
+   .container {
+    width: 90% !important;
+  } 
+    .sidebar .heading .feature-img{
+	  padding-top: 30px;
+  }
   /* Sidebar Style*/
   .sidebar .heading .title{
 	  padding-left: 50px;
@@ -97,10 +103,16 @@
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* Sidebar Style*/
+  .container {
+    width: 90% !important;
+  } 
+  .sidebar .heading .feature-img{
+	  padding-top: 30px;
+  }
   .sidebar .heading .title{
 	  padding-left: 50px;
   }
-  
+    
   .sidebar .icon {
     margin-bottom: 15px;
   }
@@ -123,9 +135,12 @@
   body {
     text-align: left;
   }
-/*   .container {
-    width: 100% !important;
-  } */
+   .container {
+    width: 90% !important;
+  } 
+  .sidebar .heading .feature-img{
+	  padding-top: 30px;
+  }
   .sidebar .heading .title{
 	  padding-left: 50px;
   }
@@ -166,10 +181,13 @@
 }
 /* tab portrait and down   */
 @media only screen and (max-width: 992px) {
-/*   .container {
-    width: 100% !important;
+   .container {
+    width: 90% !important;
     margin-top: 0px !important;
-  } */
+  } 
+  .sidebar .heading .feature-img{
+	  padding-top: 30px;
+  }
   .sidebar .heading .title{
 	  padding-left: 50px;
   }
@@ -286,6 +304,12 @@
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
   body {
     text-align: left;
+  }
+  .container {
+    width: 90% !important;
+  } 
+  .sidebar .heading .feature-img{
+	  padding-top: 30px;
   }
   .sidebar .heading .title{
 	  padding-left: 50px;

@@ -51,6 +51,7 @@ p {
 a {
   color: #555555;
 }
+
 .clear {
   clear: both;
 }
@@ -125,6 +126,7 @@ body {
   color: #767270;
   text-align: center;
 }
+
 .container {
   margin-top: 100px;
 }
