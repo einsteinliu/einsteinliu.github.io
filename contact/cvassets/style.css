@@ -346,7 +346,7 @@ body {
 
 /*for all*/
 .custom-content-wrapper li {	
-	height: 33px;
+	/*height: 33px;*/
     background: url('bullet.png') no-repeat 3px 0.4em;
 	list-style-position: outside;
     list-style: none; /* Get rid of the default bullet points */
