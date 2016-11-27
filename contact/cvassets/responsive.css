@@ -1,9 +1,13 @@
 /* Smartphones (landscape) */
 @media only screen and (min-width: 321px) and (max-device-width: 568px) {
-  .container {
+/*   .container {
     width: 100% !important;
-  }
+  } */
   /* Sidebar Style*/
+  .sidebar .heading .title{
+	  padding-left: 50px;
+  }
+  
   .sidebar .sidebar-item .info {
     margin-top: 20px;
   }
@@ -20,7 +24,7 @@
   /* Section Style*/
   .section {
     padding: 0px !important;
-    text-align: center;
+    text-align: left;
     margin-top: 30px;
     padding: 0px 22px;
   }
@@ -31,6 +35,7 @@
     padding: 15px;
   }
   .section .section-wrapper h2 {
+	padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -44,10 +49,14 @@
 }
 /* Smartphones (portrait) */
 @media only screen and (max-width: 320px) {
-  .container {
+/*   .container {
     width: 100% !important;
-  }
+  } */
   /* Sidebar Style*/
+  .sidebar .heading .title{
+	  padding-left: 50px;
+  }
+  
   .sidebar .nav-icon {
     top: 0;
   }
@@ -82,12 +91,16 @@
     margin-bottom: 10px;
   }
   .interests ul li .fa {
-    text-align: center;
+    text-align: left;
   }
 }
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* Sidebar Style*/
+  .sidebar .heading .title{
+	  padding-left: 50px;
+  }
+  
   .sidebar .icon {
     margin-bottom: 15px;
   }
@@ -108,11 +121,15 @@
 /* iPads (portrait) */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   body {
-    text-align: center;
+    text-align: left;
   }
-  .container {
+/*   .container {
     width: 100% !important;
+  } */
+  .sidebar .heading .title{
+	  padding-left: 50px;
   }
+  
   .sidebar .nav-icon {
     top: 130px;
   }
@@ -136,7 +153,7 @@
     padding: 0px !important;
     margin-top: 30px;
     padding: 0px 22px;
-    text-align: center;
+    text-align: left;
   }
   .section .custom-content-wrapper p {
     margin-top: 5px;
@@ -149,10 +166,14 @@
 }
 /* tab portrait and down   */
 @media only screen and (max-width: 992px) {
-  .container {
+/*   .container {
     width: 100% !important;
     margin-top: 0px !important;
+  } */
+  .sidebar .heading .title{
+	  padding-left: 50px;
   }
+  
   .row {
     margin-left: -1.5rem !important;
     margin-right: -1.5rem !important;
@@ -164,7 +185,7 @@
   }
   /* Sidebar Style*/
   .sidebar {
-    text-align: center;
+    text-align: left;
   }
   .sidebar .sidebar-item {
     padding: 0px 30px;
@@ -189,7 +210,7 @@
   }
   /* Section Style*/
   .section {
-    text-align: center;
+    text-align: left;
     margin-top: 30px;
     padding: 0px !important;
   }
@@ -225,7 +246,7 @@
   }
   /* Interest section Style*/
   .interests ul li .fa {
-    text-align: center;
+    text-align: left;
   }
   /* Blog section Style*/
   .post-details p {
@@ -264,8 +285,12 @@
 /* iphone 6 (portrait and landscape)  */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
   body {
-    text-align: center;
+    text-align: left;
   }
+  .sidebar .heading .title{
+	  padding-left: 50px;
+  }
+  
   .sidebar .sidebar-item {
     margin-top: 0px;
   }
