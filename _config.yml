@@ -48,12 +48,14 @@ menu:
 owner:
   name:           Wangxin
   avatar:         images/logo.png
-  bio:            "呵呵"
+  bio:            "I am algorithm engineer focused in computer vision, I know it will be more elegant to shut up and show my code, but I simply can't stop myself learning and explaining new things ..."
   email:          flybird1987@email.com
   # Social networking links used in footer. Update and remove as you like.     
   github:         einsteinliu
   linkedin:       
 
+disqus_shortname:   einsteinliu
+  
 # Background image to be tiled on all pages
 background: 
 

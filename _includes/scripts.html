@@ -12,7 +12,7 @@
 <!-- 多说评论框 start -->
 <!--<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="127.0.0.1:4000/{{ page.url }}"></div>-->
 <!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次)
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"einsteinliu"};
 	(function() {
@@ -26,6 +26,7 @@ var duoshuoQuery = {short_name:"einsteinliu"};
 </script>
 <!-- 多说公共JS代码 end -->
 
+{% if page.comments != false %}{% include disqus_comments.html %}{% endif %}
 
 {% if site.google_analytics %}
 <!-- Asynchronous Google Analytics snippet -->
@@ -40,8 +41,6 @@ var duoshuoQuery = {short_name:"einsteinliu"};
   ga('send', 'pageview');
 </script>
 {% endif %}
-
-{% if page.comments != false %}{% include disqus_comments.html %}{% endif %}
 
 {% if site.float_share %}
 <script type="text/javascript">
