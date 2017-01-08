@@ -38,7 +38,7 @@ We compute $$cov(x_1,x_2)$$,$$cov(x_1,x_1)$$ and $$cov(x_2,x_2)$$, obviously $$c
 
 
  ![eigen]({{ site.url }}\images\computer_vision\pca\eigen.png)
- 
+
  
 
 the dots in the upper right chart means one data point $$(x_1^i,x_2^i)$$ 
@@ -59,11 +59,34 @@ We consider a face image is a point in high-dimensional space.
 
 The training set of face images will be our point set, just as one dot in the upper chart. **Remember, this face image data set only contains the face images of one person.**
 
-**Traning:**
+**Training:**
 
-The training process will be calculating this data set's covariance matrix and its eigen vectors and eigen values.
+The training process will be calculating this data set's covariance matrix and its eigen vectors and eigen values.For this task we use SVD, assume that we have the data matrix X, after the SVD we get:
 
-So for a image of 100x100, we get a data point in a 10000 dimensional space. Then we can calculate a 10000x10000 covariance matrix. From this matrix we get a 10000 dimensional eigen vector whose eigen value is the biggest of all eigen values.
+$$
+X=U\Sigma V^*
+$$
+
+What we want is the eigenvalues and eigenvectors of X's covariance matrix:$$XX^T$$
+
+According to the properties of SVD, we get:
+
+
+$$
+XX^T=U\Sigma^2U^T\\
+$$
+
+As we know that $$U$$ is an orthogonal matrix, which means $$U^T=U^{-1}$$ , so we get:
+
+$$
+XX^TU=U\Sigma^2
+$$
+
+Obviously, The vectors in U are the eigenvectors of $$XX^T$$ and the square of the values in $$\Sigma$$ are its eigenvalues.
+
+Practically:
+
+For a image of 100x100, we get a data point in a 10000 dimensional space. Then we can calculate a 10000x10000 covariance matrix. From this matrix we get a 10000 dimensional eigen vector whose eigen value is the biggest of all eigen values.
 
 This 10000 eigen vector is of course also a face image, it is the so called eigen face or basis face. **Eigen face is the computed face image which contains the most important features of this person.**
 
