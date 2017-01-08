@@ -102,3 +102,7 @@ $$
 $$
 
 which is called elastic net regularization. As we said that L2 regularization makes the $$\omega$$ decays linearly, for L1 regularization the weights will be reduced by a constant in every update step. Finally all the none-important weights will be disappeared and only the important weights will be left. Which means by using L1 regularization the system will be invariant to the "noisy" inputs. In comparison, using L2 will lead to diffuse, small weights.
+
+### Max norm constraints
+
+Just as its name described, we can also enforce a upper bound for $$\|\omega\|_2$$ of each neuron. In practice, after the normal update, we multiple all weights in $$\omega$$ by a constant $$k$$ to make sure that $$\|\omega\|_2<c$$, $$c$$ is the upper bound we set, which is usually of the order 3 or 4.
