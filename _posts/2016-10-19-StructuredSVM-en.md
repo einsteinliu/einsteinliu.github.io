@@ -2,7 +2,7 @@
 layout: post
 title: Structural SVM with Latent Variables Notes
 description: "Structural SVM notes"
-tags: [线性分类器, 论文笔记, 机器学习, Optimization, SVM]
+tags: [Paper Notes, Machine Learning, Optimization, SVM]
 categories: [Machine Learning, Machine Learning Basic]
 ---
 

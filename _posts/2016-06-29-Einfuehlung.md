@@ -2,8 +2,8 @@
 layout: post
 title: 移情，内模仿与器官感觉
 description: "翻译"
-tags: [Aesthetics]
-categories: [Aesthetics, Art]
+tags: [美学]
+categories: [美学]
 ---
 
 迪奥多.立普斯著
