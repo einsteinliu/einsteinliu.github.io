@@ -19,14 +19,17 @@ menu:
   - title: 'CV Study'
     url: '/machine-learning'
     submenu:
+      - title: 'SLAM'
+        url: '/slam'
       - title: 'Computer Vision'
         url: '/computer-vision'
-      - title: 'Basics Knowledge'
+      - title: 'Machine Learning'
         url: '/ml-basic'
+
   - title: 'Techniques'
     url: '/tech'
     submenu:
-      - title: 'Programming Languages'
+      - title: 'C/C++/C#'
         url: '/program'
       - title: 'Other Techniques'
         url: '/others'
