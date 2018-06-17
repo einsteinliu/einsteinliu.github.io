@@ -3,7 +3,7 @@ layout: post
 title: Linear Classification
 description: "SVM"
 tags: [SVM, Stanford Machine Learning Notes]
-categories: [Machine Learning, Machine Learning Basic]
+categories: [Machine Learning, Machine Learning Basic,Research&Study]
 ---
 
 ### Loss Function

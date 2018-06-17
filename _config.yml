@@ -16,8 +16,8 @@ url:
 menu:
   - title: 'Main'
     url: '/'
-  - title: 'CV Study'
-    url: '/machine-learning'
+  - title: 'Research/Study'
+    url: '/research-study'
     submenu:
       - title: 'SLAM'
         url: '/slam'

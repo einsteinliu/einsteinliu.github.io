@@ -3,7 +3,7 @@ layout: post
 title: PCA and Face Recognition - Eigen Face
 description: "The basics of PCA and its usage in face recognition"
 tags: [Computer Vision, Machine Learning, Face Recognition]
-categories: [Computer Vision, Machine Learning]
+categories: [Computer Vision, Machine Learning,Research&Study]
 ---
 
  PCA (**Principal component analysis**), just as its name shows, it computes the data set's internal structure, its "principal components".

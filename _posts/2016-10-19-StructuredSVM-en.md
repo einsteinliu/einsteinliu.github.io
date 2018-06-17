@@ -3,7 +3,7 @@ layout: post
 title: Structural SVM with Latent Variables Notes
 description: "Structural SVM notes"
 tags: [Paper Notes, Machine Learning, Optimization, SVM]
-categories: [Machine Learning, Machine Learning Basic]
+categories: [Machine Learning, Machine Learning Basic,Research&Study]
 ---
 
 Structural SVM is a variation of SVM, hereafter to be refered as SSVM 

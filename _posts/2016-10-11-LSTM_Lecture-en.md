@@ -3,7 +3,7 @@ layout: post
 title: Lecture notes of LSTM's Inventor Sepp Hochreiter
 description: "LSTM"
 tags: [NN, Deep Learning, LSTM]
-categories: [Machine Learning, Machine Learning Basic, Deep Learning]
+categories: [Machine Learning, Machine Learning Basic, Deep Learning,Research&Study]
 ---
 
 Sepp Hochreiter was graduated from Technische Universität München, LSTM was invented when he was in TU and now he is the head of [Institute of Bioinformatics, Johannes Kepler University Linz](http://www.bioinf.jku.at/). 

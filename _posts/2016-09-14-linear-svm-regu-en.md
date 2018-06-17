@@ -3,7 +3,7 @@ layout: post
 title: SVM:multi-class SVM regularization 
 description: "SVM"
 tags: [SVM, Stanford Machine Learning Notes]
-categories: [Machine Learning, Machine Learning Basic]
+categories: [Machine Learning, Machine Learning Basic,Research&Study]
 ---
 
 ### Review 
