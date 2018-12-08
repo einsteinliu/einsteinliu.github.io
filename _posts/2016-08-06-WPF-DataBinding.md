@@ -9,7 +9,7 @@ categories: [Tech, Program]
 
 ### DataBinding and MVVM Pattern
 
-When dealing with GUI, normally we use the so-called MVC pattern, which means we manager a set of data as **Model**  and we demonstrate them as **View**, the **Contoller** controls the logic of showing the data:
+When dealing with GUI, usually we will use the MVC pattern, which means we manage a set of data as **Model**, the model will be demonstrated as **View** and the **Contoller** controls the logic of showing the data:
 
 ![mvc_role_diagram]({{ site.url }}\images\csharp\mvc_role_diagram.png)
 
@@ -30,19 +30,19 @@ for(int i=0;i<listbox1.Count;i++)
 }
 ```
 
-This is very ridicules.
+This is not very elegante.
 
 In WPF, we use MVVM (Model–view–viewmodel) pattern, it put the **Model** and **View** in MVC pattern much closer with the help of the data binding technique:
 
 ![MVVMPattern]({{ site.url }}\images\csharp\MVVMPattern.png)
 
-The logic is simple: the **View** and the **ViewModel** have the same structure and they are binded together, so when I changed the ViewModel, the View will automatically presents the ViewModel. Then all the "set" and "get" works are no longer needed once the View and ViewModel are binded.
+The logic is simple: the **View** and the **ViewModel** have the same structure and they are binded together, so when I changed the ViewModel, the View will automatically present the ViewModel. Then all the "set" and "get" works are no longer needed once the View and ViewModel are binded.
 
 ### DataBinding Implementation Details
 
 #### <center>Defining the DataContext</center>
 
-Data binding works in a **DataContext**, before every thing is started, we must define the DataContext. **DataContext must be a object, this object is the "ViewModel" of our GUI and all the data bindings will be done on this object.** If the data we use are not all combined into one class but exist as our MainWindow's properties, we set the DataContext to be the MainWindow it self:
+Data binding works in a **DataContext**, before everything is started, we must define the DataContext. **DataContext must be an object, this object is the "ViewModel" of our GUI and all the data bindings will be done on this object.** If the data we use are not all combined into one class but exist as our MainWindow's properties, we set the DataContext to be the MainWindow itself:
 
 ```c#
 public MainWindow()
@@ -63,26 +63,26 @@ Now we are binding some data to a ListBox in MainWindow.xaml:
 <ListBox x:Name="listBox" ItemsSource="{Binding Path=Names}"/>
 ```
 
-The two lines of xaml code above are the same, the so called "Path" means the path of the data we are going to bind relative to DateContex, so we can understand it as binding the ItemsSource to DataContex.Names. **"Names" is a property of the DataContex, in our case, it is *this.Names***, which means there must be a property "Names" existed in our MainWindow class:
+The two lines of xaml code above are the same, "Path" means the path of the data we are going to bind relative to DateContex, so we can understand it as binding the ItemsSource to DataContex.Names. **"Names" is a property of the DataContex, in our case, it is *this*.** **Names**, which means there must be a property "Names" existed in our MainWindow class:
 
 ```c#
 public partial class MainWindow : Window
 {
-	public ObservableCollection<string> Names { get; set; }
-	public MainWindow()
-	{
+    public ObservableCollection<string> Names { get; set; }
+    public MainWindow()
+    {
       	  Names = new ObservableCollection<string>() { "hehe", "haha" };
     	  InitializeComponent();
       	  DataContext = this;
-	}
+    }
 }
 ```
 
 Because we are binding some data to a ListBox, this data(property) must be some kinds of Collection. In order to synchronize between data and ListBox, **it must be ObservableCollection**, what's more, **it must be a public property and has explicit "get" and "set".**
 
-If it is not a ObservableCollection, the ListBox can not notice its changes. 
+If it is not an ObservableCollection, the ListBox can not notice its changes. 
 
-If it is not public, the ListBox can not get access to it.
+If it is not public, the ListBox cannot get access to it.
 
 Now the program should run correctly. Except defining the DataBinding in xaml, we can also achieve the same functionality dynamically in the code:
 
@@ -135,14 +135,14 @@ public class Person
     	Name = n;
         Age = a;
     }
-	public string Name {get;set;}    
+    public string Name {get;set;}    
     public int Age {get;set;}    
 }
 public partial class MainWindow : Window
 {
-	public ObservableCollection<Person> Persons { get; set; }
+    public ObservableCollection<Person> Persons { get; set; }
     public string selectedName { get; set; }
-	public MainWindow()
+    public MainWindow()
 	{
          Persons = new ObservableCollection<Person>();
          Persons.Add(new Person("Lena",18));
@@ -169,14 +169,14 @@ C# Part:
 ```c#
 public partial class MainWindow : Window
 {
-        public ObservableCollection<string> Names { get; set; }
-        public string selectedName { get; set; }
-        public MainWindow()
-        {
-            Names = new ObservableCollection<string>() { "hehe", "haha" };
-            InitializeComponent();
-            DataContext = this;
-        }
+    public ObservableCollection<string> Names { get; set; }
+    public string selectedName { get; set; }
+    public MainWindow()
+    {
+        Names = new ObservableCollection<string>() { "hehe", "haha" };
+        InitializeComponent();
+        DataContext = this;
+    }
 }
 ```
 
