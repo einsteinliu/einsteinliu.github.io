@@ -30,7 +30,7 @@ for(int i=0;i<listbox1.Count;i++)
 }
 ```
 
-This is not very elegante.
+This is not very elegant.
 
 In WPF, we use MVVM (Model–view–viewmodel) pattern, it put the **Model** and **View** in MVC pattern much closer with the help of the data binding technique:
 
@@ -104,12 +104,12 @@ The xaml way:
 <ListBox x:Name="listBox" ItemsSource="{Binding Names}" SelectedItem="{Binding selectedName, Mode=TwoWay}"/>
 ```
 
-Of cause we have to add a property named "selectedName" in our DataContex(MainWindow):
+Of couse we have to add a property named "selectedName" in our DataContex(MainWindow):
 
 ```c#
 public partial class MainWindow : Window
 {
-	public ObservableCollection<string> Names { get; set; }
+    public ObservableCollection<string> Names { get; set; }
     public string selectedName { get; set; }
   	...
 }
@@ -143,22 +143,22 @@ public partial class MainWindow : Window
     public ObservableCollection<Person> Persons { get; set; }
     public string selectedName { get; set; }
     public MainWindow()
-	{
-         Persons = new ObservableCollection<Person>();
-         Persons.Add(new Person("Lena",18));
-      	 InitializeComponent();
-      	 DataContext = this;
+    {
+        Persons = new ObservableCollection<Person>();
+        Persons.Add(new Person("Lena",18));
+        InitializeComponent();
+        DataContext = this;
     }
 }
 ```
 
-So we can see that Person as a class of cause can not be directly presented by ListBox, so we should set the ListBox's DisplayItemPath in xaml:
+So we can see that Person as a class of course can not be directly presented by ListBox, so we should set the ListBox's DisplayItemPath in xaml:
 
 ```html
 <ListBox x:Name="listBox" ItemsSource="{Binding Persons}" DisplayMemberPath="Name"/>
 ```
 
-Which means we want to display DataContext.Persons[k].Name as the ListBox's kth item. In this case the kth item will display ***this.Persons[k].Name.***
+Which means we want to display DataContext.Persons[k].Name as the ListBox's kth item. In this case, the kth item will display ***this.Persons[k].Name.***
 
 ------
 
