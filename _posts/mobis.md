@@ -2,9 +2,13 @@
 layout: post
 title: Goodbye Mobis
 description: "Mobis"
-tags: [Life]
-categories: [Life]
+tags: [NN]
+categories: [Research&Study]
+comments: true
 ---
+
+Goodbye Mobis
+
 
 
 
