@@ -2,8 +2,8 @@
 layout: post
 title: Goodbye Mobis
 description: "Mobis"
-tags: []
-categories: []
+tags: [Life]
+categories: [Life]
 ---
 
 
