@@ -9,7 +9,7 @@ comments: true
 
 Uncertainty estimation of the output from a deep neural network has recently become a hot topic, mainly due to Alex Kendall's PhD thesis *[Geometry and Uncertainty in Deep Learning for Computer Vision](https://alexgkendall.com/computer_vision/phd_thesis/)*, where he mentioned the uncertainty problems for semantic and geometrical problems in the computer vision field. What is more, it provides us a weighting strategy for the losses of multi-task learning, which is a very practical problem in both the academical and industrial fields. It is highly recommended to take a close look at Alex Kendall's presentation of his PhD thesis [Geometry and Uncertainty in Deep Learning](https://www.robots.ox.ac.uk/seminars/Extra/2017_03_20_AlexKendall.pdf). As a short introduction of Bayesian deep learning, you can also take a look at his blog article  [Bayesian deep learning - Alex Kendall]( https://alexgkendall.com/computer_vision/bayesian_deep_learning_for_safe_ai/ ).
 
-Come to the topic today, the paper published in ICCV 2019 [Gaussian YOLOv3: An Accurate and Fast Object Detector Using Localization Uncertainty for Autonomous Driving]( https://arxiv.org/abs/1904.04620 ) tries to apply uncertainty estimation for the detection task, and it succeeded. Uncertainty estimation is much more than uncertainty output, it can also be used to construct a loss function and raise the detection accuracy. The paper focused on estimating the uncertainty of the bounding box localization, which means the coordinate of the bounding box center and its width and height. By using the uncertainty estimation, the paper managed to achieve 3.5 more mAP than the original YoloV3 with 1% more computational cost, what is more, the implementation is also quite straight forward.
+Come to the topic today, the paper published in ICCV 2019 [Gaussian YOLOv3: An Accurate and Fast Object Detector Using Localization Uncertainty for Autonomous Driving]( https://arxiv.org/abs/1904.04620 ) tries to apply uncertainty estimation for the detection task, and it succeeded. Uncertainty estimation is much more than uncertainty output, it can also be used to construct a loss function and raise the detection accuracy. The paper focused on estimating the uncertainty of the bounding box localization, which means the coordinate of the bounding box center and its width and height. By using the uncertainty estimation, the paper managed to achieve 3.5 more mAP than the original YoloV3 with 1% more computational cost, what is more, the implementation is also quite straight forward. This blog will provide a in-depth explaination of this paper.
 
 <!-- more -->
 
@@ -19,9 +19,9 @@ The architecture of the original Yolo V3 looks like this:
 
 ![Yolo V3 Architecture]({{ site.url }}/images/machine_learning/gaussian_yolo/yolo_output.jpg)
 
-There are detection outputs from 3 difference scales, a detailed explanation is given for the 2nd scale. The 94th layer consists of the regression channels for bounding box localization: channel $$t_x$$ ,$$t_y$$, $$t_w$$ and $$t_h$$, the confidence map of objectness and the classification channels for different classes $$P_0$$ ,$$P_1$$ ....
+There are detection outputs(Yolo layer) from 3 difference scales, the uncertainty estimation is applied for all 3 Yolo layers, this blog will only explain the Yolo layer of the 2nd scale. The 94th layer consists of the regression channels for bounding box localization(channel $$t_x$$ ,$$t_y$$, $$t_w$$ and $$t_h$$), the confidence map of objectness and the classification channels for different classes($$P_0$$ ,$$P_1$$ ....).
 
-Based on the detection encoding of Yolo V3, $$t_x$$ and $$t_y$$ represent the coordinate of the bounding box center within the grid, thus their ranges must be between 0 and 1. As an example, if the bounding box center is located at the center of a grid, both $$t_x,t_y$$ will be 0.5. In order to make sure the regressed value does not exceed the range, a sigmoid activation layer is used for regressing $$t_x, t_y$$.
+Based on the detection encoding of Yolo V3, each pixel of a Yolo layer represent a grid cell, $$t_x$$ and $$t_y$$ represent the coordinates of the bounding box center within a grid cell, thus their ranges must be between 0 and 1. As an example, if the bounding box center is located at the center of a grid cell, both $$t_x,t_y$$ will be 0.5. In order to make sure that the regressed value does not exceed the range, a sigmoid activation layer is used to regress $$t_x, t_y$$.
 
 For $$t_w, t_h$$, they are used to encode the width and height of the bounding box based on the prior:
 
@@ -30,19 +30,19 @@ b_w=p_we^{t_w}\\
 b_h=p_he^{t_h}
 $$
 
-, where $$b_w,b_h$$ are the predicted bounding box width and height,  $$t_w, t_h$$ are the direct outputs from the detection layer.
+where $$b_w,b_h$$ are the predicted bounding box width and height,  $$t_w, t_h$$ are the direct outputs from the detection layer.
 
 ### Yolo V3 with uncertainty ###
 
-With uncertainty output, the meaning of the network output  is changed. The network does not only regress the value itself (such as $$t_x, t_y, t_w, t_h$$), it also regresses the uncertainty of these four values. Then the outputs of the network turn to be like this:
+With uncertainty output, the meaning of the network output is changed. The network does not only regress the value itself (such as $$t_x, t_y, t_w, t_h$$), it also regresses the uncertainty of these four values. Then the outputs of the network turn to be like this:
 
 ![yolo_output_uncertain]({{ site.url }}/images/machine_learning/gaussian_yolo/yolo_output_uncertain.jpg)
 
-From a probabilistic point of view, we treat the output values as a parameter pair $(\mu, \Sigma)$ which represents a Gaussian distribution. Instead of only predicting a value $t_x$, the network tries to predict a Gaussian distribution of the value $t_x$. This Gaussian distribution can be described by its mean $\mu_{t_x}$ and variance $\Sigma_{t_x}$:
+From a probabilistic point of view, we treat the output values as a parameter pair $$(\mu, \Sigma)$$ which represents a Gaussian distribution. Instead of only predicting a value $$t_x$$, the network tries to predict a Gaussian distribution of the value $$t_x$$. This Gaussian distribution can be described by its mean $$\mu_{t_x}$$ and variance $$\Sigma_{t_x}$$:
 
 ![gaussian_yolo_output]({{ site.url }}/images/machine_learning/gaussian_yolo/gaussian_yolo_output.png)
 
-So, the output $$(\mu_{tx},\Sigma_{t_x})$$ is treated as a complete Gaussian curve. More naturally, we can also treat the mean value $$\mu_{t_x}$$ as the prediction $t_x$ and the variance $$\Sigma_{t_x}$$ as its uncertainty. 
+So, the output $$(\mu_{tx},\Sigma_{t_x})$$ is treated as a complete Gaussian curve. More naturally, we can also treat the mean value $$\mu_{t_x}$$ as the prediction $$t_x$$ and the variance $$\Sigma_{t_x}$$ as its uncertainty. 
 
 We should pay attention here that the variance $$\Sigma_{t_x}$$ can be interpreted as uncertainty just because the range of the value $$t_x$$ is between 0 and 1, therefore its variance will be also in the range of $$[0, 1]$$. Otherwise, if the variance can be bigger than 1, we will not be able to interpret it as uncertainty.
 
