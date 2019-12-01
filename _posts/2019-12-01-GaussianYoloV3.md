@@ -9,7 +9,9 @@ comments: true
 
 Uncertainty estimation of the output from a deep neural network has recently become a hot topic, mainly due to Alex Kendall's PhD thesis *[Geometry and Uncertainty in Deep Learning for Computer Vision](https://alexgkendall.com/computer_vision/phd_thesis/)*, where he mentioned the uncertainty problems for semantic and geometrical problems in the computer vision field. What is more, it provides us a weighting strategy for the losses of multi-task learning, which is a very practical problem in both the academical and industrial fields. It is highly recommended to take a close look at Alex Kendall's presentation of his PhD thesis [Geometry and Uncertainty in Deep Learning](https://www.robots.ox.ac.uk/seminars/Extra/2017_03_20_AlexKendall.pdf). As a short introduction of Bayesian deep learning, you can also take a look at his blog article  [Bayesian deep learning - Alex Kendall]( https://alexgkendall.com/computer_vision/bayesian_deep_learning_for_safe_ai/ ).
 
-Come to the topic today, the paper published in ICCV 2019 [Gaussian YOLOv3: An Accurate and Fast Object Detector Using Localization Uncertainty for Autonomous Driving]( https://arxiv.org/abs/1904.04620 ) tries to apply uncertainty estimation for the detection task, and it succeeded. Uncertainty estimation is much more than uncertainty output, it can also be used to construct a loss function and raise the detection accuracy. The paper focused on estimating the uncertainty of the bounding box localization, which means the coordinate of the bounding box center and its width and height.
+Come to the topic today, the paper published in ICCV 2019 [Gaussian YOLOv3: An Accurate and Fast Object Detector Using Localization Uncertainty for Autonomous Driving]( https://arxiv.org/abs/1904.04620 ) tries to apply uncertainty estimation for the detection task, and it succeeded. Uncertainty estimation is much more than uncertainty output, it can also be used to construct a loss function and raise the detection accuracy. The paper focused on estimating the uncertainty of the bounding box localization, which means the coordinate of the bounding box center and its width and height. By using the uncertainty estimation, the paper managed to achieve 3.5 more mAP than the original YoloV3 with 1% more computational cost, what is more, the implementation is also quite straight forward.
+
+<!-- more -->
 
 ### Original Yolo V3 ###
 
@@ -22,10 +24,12 @@ There are detection outputs from 3 difference scales, a detailed explanation is 
 Based on the detection encoding of Yolo V3, $$t_x$$ and $$t_y$$ represent the coordinate of the bounding box center within the grid, thus their ranges must be between 0 and 1. As an example, if the bounding box center is located at the center of a grid, both $$t_x,t_y$$ will be 0.5. In order to make sure the regressed value does not exceed the range, a sigmoid activation layer is used for regressing $$t_x, t_y$$.
 
 For $$t_w, t_h$$, they are used to encode the width and height of the bounding box based on the prior:
+
 $$
 b_w=p_we^{t_w}\\
 b_h=p_he^{t_h}
 $$
+
 , where $$b_w,b_h$$ are the predicted bounding box width and height,  $$t_w, t_h$$ are the direct outputs from the detection layer.
 
 ### Yolo V3 with uncertainty ###
@@ -49,9 +53,11 @@ The answer is simple: **we do not need ground truth for the uncertainty, it is l
 Practically, the uncertainty can be considered as a learned weighting parameter of the loss and a regularizer. Let us take a look at how the loss function will change by introducing the uncertainty.
 
 Without uncertainty, the loss function can be as simple as:
+
 $$
 Loss = (t_x^{Gt}-t_x)^2
 $$
+
 where $$t_x^{Gt}$$ is the ground truth and $$t_x$$ is the prediction. 
 
 With the uncertainty, even the difference between the ground truth and the prediction is the same, our loss can be different, and it makes a lot of sense:
@@ -61,6 +67,7 @@ With the uncertainty, even the difference between the ground truth and the predi
 In the above diagram, $$t_x$$ has a small uncertainty and $$t_x'$$ has a big uncertainty. For both cases, the absolute differences between the ground truth and the prediction are the same, but the likelihood is quite different. It is natural that we can learn more from the loss of very certain output, on the other hand, we would better to keep some doubt on the highly uncertain output.
 
 The concept can be modeled in a simple maximum likelihood framework. Let us say we get a predicted distribution $$\mu_{t_x},\Sigma_{t_x}$$, the likelihood of having the ground truth $$t_x^{Gt}$$ will be:
+
 $$
 \displaystyle L(t_x^{Gt}|\mu_{t_x},\Sigma_{t_x})=\frac{1}{\sqrt{2\pi}\Sigma_{t_x}}e^{-\frac{(t_x^{Gt}-\mu_{t_x})^2}{2\Sigma_{t_x}^2}}
 $$
