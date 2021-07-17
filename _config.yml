@@ -1,5 +1,5 @@
 title:            Wangxin's Blog
-description:      一些笔记和文章。。。
+description:      Technical Blogs
 disqus_shortname: 
 reading_time:     false
 words_per_minute: 200
@@ -33,15 +33,6 @@ menu:
         url: '/program'
       - title: 'Other Techniques'
         url: '/others'
-#  - title: '艺术'
-#    url: '/art'
-#    submenu:
-#      - title: '艺术史'
-#        url: '/art-history'
-#      - title: '艺术理论'
-#        url: '/art-theory'
-#      - title: '美学'
-#        #url: '/aesthetics'
   - title: 'Tags'
     url: '/tags'
   - title: 'Resume'
