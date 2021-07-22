@@ -39,9 +39,9 @@ comments: false
                                 </div> -->                                
                                 <div class="col m12 s12 l12 info"> <!-- text -->
                                     <div class="section-item-details">
-                                        <p class="hyphenate" style="padding: 5px 0px 0px 25px" id="wrap">As a computer vision engineer with 8 years of experience, I focused on bridging the gap between theory and product. With the help of my training in mathematics, I get a deep insight into problems. <br><br>
-I am now developing deep neural network models in ESR Labs. My main focus is designing and compressing efficient models for specific hardwares, different hardwares have their own limitations and strengths, designing neural networt architecture under the awareness of the hardware is challenging and is still far from solved.<br><br>
-I enjoy learning and tracking the latest developments of deep learning and keep thinking in an inovative may to adapt the state-of-the-art models to the target platform.
+                                        <p class="hyphenate" style="padding: 5px 0px 0px 25px" id="wrap">As a computer vision engineer with 12 years of experience, I focused on bridging the gap between theory and product. With the help of my training in mathematics, I get a deep insight into problems. <br><br>
+I am now developing autonomous driving system in ESR Labs/Accenture. I mainly focuse on perception tasks including SLAM, object detection, segmentation, hardware-aware neural network design and compression. All my experience in the fields of developing SLAM and neural networks on embedded platforms makes it possible for me to design a perception stack by putting all the factors into consideration, including market position, strength and limitations of the target hardware and the technical strength of the team.<br><br>
+I enjoy learning and tracking the latest developments of SLAM and deep learning, I keep thinking in an inovative may to adapt the state-of-the-art technologies to the target platform.
                                     </div>             
                                 </div>
                             </div>         
@@ -112,11 +112,13 @@ I enjoy learning and tracking the latest developments of deep learning and keep 
 								<h3>SDK/Frameworks</h3>
 								<ul class="list-meta inline-list">
 									<li><a class="tag"><span class="term">OpenCV</span></a></li>
+                                    <li><a class="tag"><span class="term">PyTorch</span></a></li>
+                                    <li><a class="tag"><span class="term">TensorFlow</span></a></li>       
+                                    <li><a class="tag"><span class="term">TensorRT</span></a></li>
                                     <li><a class="tag"><span class="term">OpenGL</span></a></li>
                                     <li><a class="tag"><span class="term">BLAS</span></a></li>
-                                    <li><a class="tag"><span class="term">PCL</span></a></li>									                                    
-                                    <li><a class="tag"><span class="term">TensorFlow</span></a></li>
-                                    <li><a class="tag"><span class="term">PyTorch</span></a></li>                                                                        
+                                    <li><a class="tag"><span class="term">PCL</span></a></li>									                                                                                                                                         
+                                    <li><a class="tag"><span class="term">Open3D</span></a></li>
                                     <li><a class="tag"><span class="term">CMake</span></a></li>
 									<li><a class="tag"><span class="term">Markdown</span></a></li>
 									<li><a class="tag"><span class="term">LaTex</span></a></li>
@@ -124,7 +126,6 @@ I enjoy learning and tracking the latest developments of deep learning and keep 
 									<li><a class="tag"><span class="term">.Net</span></a></li>
 									<li><a class="tag"><span class="term">Qt</span></a></li>
 									<li><a class="tag"><span class="term">WPF</span></a></li>
-									<li><a class="tag"><span class="term">MFC</span></a></li>									
 									<li><a class="tag"><span class="term">Beautifulsoup</span></a></li>
 								</ul>
 								
@@ -195,11 +196,15 @@ I enjoy learning and tracking the latest developments of deep learning and keep 
                             <h2>Work Experience</h2>
                             
                             <div class="custom-content-wrapper">
-                                <h3>Machine Learning Engineer <span>@ESR Labs</span></h3>
+                                <h3>Machine Learning Engineer <span>@ESR Labs/Accenture</span></h3>
                                 <span>Oct/2019 - present </span>
                                 <p></p>
                                 <ul>
                                 <li>Hardware-aware deep neural network design and compression.<br></p></li>									
+                                <li>Software architecture design by considering company's market position, business use cases, technical strength and suppliers' limitations.<br></p></li>
+                                <li>Continuous semantic grid map construction and fusion.<br></p></li>
+                                <li>Neural network based lane detection. Lane estimation and tracking with prior knowledge fusion.<br></p></li>
+                                <li>Semi-automatic and automatic ground truth annotation for different tasks.<br></p></li>                                
                                 </ul>
                             </div>
 
@@ -275,7 +280,49 @@ I enjoy learning and tracking the latest developments of deep learning and keep 
                                 <i class="fa fa-magic"></i>
                             </div>
                             <div class="custom-content col s14 m16 l10">
-                                <h2>Projects</h2>
+                                <h2>Projects</h2>                                
+                                <div class="custom-content-wrapper">
+                                    <h3>Environment Perception of an Autonomous Driving System<span>@ESR Labs/Accenture</span></h3>
+									<span>C++/Tracking/Grid Map Fusion/Lane Estimation/PyTorch/TensorRT</span>
+									<p></p>
+									<ul>
+										<li>Continuous statistical fusion of semantic grid map based on camera semantic segmentation</li>
+										<li>Responsible of developing lane detection neural network from data annotation to target hardware deployment</li>
+										<li>Designed and developed a continuous lane estimation and tracking system which supports prior knowledge fusion</li>
+									</ul>
+                                </div>
+                                <div class="custom-content-wrapper">
+                                    <h3>Architecture Design of a Distributed Event-driven Data Collection System<span>@ESR Labs/Accenture</span></h3>
+									<span>Market Analysis/Requirement Engineering/System Design</span>
+									<p></p>
+									<ul>
+										<li>Requirements engineering and business analysis based on the client's market position</li>
+										<li>Clarification of the system limitations by directly communicating with the client's hardware and software suppliers</li>
+										<li>Completed the software architecture design, which covers the whole system from cloud to subsystems' flowcharts on edge device</li>
+									</ul>
+                                </div>
+                                <div class="custom-content-wrapper">
+                                    <h3>Object Detection Prototype on an Embedded Platform<span>@ESR Labs/Accenture</span></h3>
+									<span>C++/Hardware Aware Network Design/Neural Network Compression</span>
+									<p></p>
+									<ul>
+										<li>Designed and trained an object detection network based on the consideration of the hardware's strength and limitations</li>
+										<li>Developed a neural network compression application which reduces the inference time by 50%</li>
+										<li>Designed and developed a complete object detection solution. 
+                                            Implemented on an embedded platform from camera driver to video output, the system achieves high accuracy and runs at 60 fps</li>
+									</ul>
+                                </div>
+                                <div class="custom-content-wrapper">
+                                    <h3>Neural Network Pipeline <span>@ESR Labs/Accenture</span></h3>
+									<span>C++/TensorFlow/PyTorch/TensorRT/Deep Learning</span>
+									<p></p>
+									<ul>
+										<li>Designed and developed a semi-automatic lane annotation application</li>
+										<li>Implemented a fully automatic object detection and instance segmentation annotation system</li>
+										<li>Designed and implemented a C++ neural network library on an embedded platform, 
+                                            the library supports 3 different neural network inference frameworks</li>
+									</ul>
+                                </div>
                                 <div class="custom-content-wrapper">
                                     <h3>Autonomous Vehicle Motion Estimation <span>@Hyundai Mobis</span></h3>
 									<span>C/BLAS/CMake/OpenCV/TensorFlow/SLAM/Deep Learning</span>
