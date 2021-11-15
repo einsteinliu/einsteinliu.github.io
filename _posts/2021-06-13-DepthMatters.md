@@ -13,8 +13,6 @@ Theoretically, two layer neural network as an universal approximator can fit any
 
 According to the paper [Topology of deep neural networks](www.arxiv.org/abs/2004.06093), evey layer of a ReLU neural network is try to separate the data points by folding the high dimension manifold. The paper uses the Betti number to measure the distance between the current folded manifold and the final target manifold, it discovered that the works each layers have done are different for different networks. 
 
-<!-- more -->
-
 For shallow networks, most of the folding efforts are done  by the last layer. For deep networks, the folding efforts done by each layer are similar. Which means, the works done by each layer of a deep neural networks are relatively simple and easy, but the works to be done by the last layer of a shallow network are complicated and hard.
 
 It is not hard to imagine, the deep neural network solves the problem by abstracting it, which makes the training easier and of higher efficiency.
